@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能驾驶项目｜OXYGEN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portfolio-detail.css">
+    <link rel="stylesheet" href="site-refine.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="legacy-project-body">
+    <canvas id="circleCanvas"></canvas>
+    <header class="header">
+        <nav>
+            <a href="index.html" class="logo brand-wordmark" aria-label="OXYGEN，返回首页"><span class="brand-name">O<span class="brand-code">XYG</span>EN<span class="brand-period">.</span></span></a>
+            <ul>
+                <li><a href="index.html#about">关于我</a></li>
+                <li><a href="index.html#portfolio">创作</a></li>
+                <li><a href="index.html#contact">联系方式</a></li>
+            </ul>
+            <a class="header-back" href="index.html#portfolio">返回创作 ↗</a>
+        </nav>
+    </header>
+    <main class="main-section">
+        <section class="portfolio-detail">
+            <div class="portfolio-header">
+                <h1>智能驾驶车辆体验与APP优化设计</h1>
+                <div class="portfolio-meta">
+                    <span><i class="fas fa-calendar"></i> 2024.9-2024.12</span>
+                    <span><i class="fas fa-tag"></i> 智能出行设计</span>
+                </div>
+            </div>
+            <div class="portfolio-content">
+                <section class="project-overview">
+                    <h2>项目定位与设计挑战</h2>
+                    <p>针对极越汽车（JIYUE 07）智能化转型中的用户适应性问题，本项目致力于降低智能驾驶学习成本并优化人车交互体验。核心矛盾在于：车载系统突破性创新（如取消实体按键、超长屏幕交互）虽提升技术先进性，但显著提高用户认知负荷。</p>
+                    
+                    <div class="challenge-cards">
+                        <div class="challenge-card">
+                            <div class="card-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>78%</h3>
+                            <p>新用户需≥3天适应全新交互逻辑</p>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="card-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3>65%</h3>
+                            <p>传统驾驶习惯与智能操作冲突率</p>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="card-icon">
+                                <i class="fas fa-hand-pointer"></i>
+                            </div>
+                            <h3>42%</h3>
+                            <p>触屏换挡误触率</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="design-strategy">
+                    <h2>核心设计策略</h2>
+                    
+                    <!-- 渐进式能力引导系统 -->
+                    <div class="strategy-section">
+                        <h3>渐进式能力引导系统</h3>
+                        <div class="strategy-content">
+                            <div class="strategy-card">
+                                <div class="card-header">
+                                    <i class="fas fa-layer-group"></i>
+                                    <h4>驾驶场景分级可视化</h4>
+                                </div>
+                                <p>将智能驾驶能力拆解为L0-L4层级（从基础巡航到全自动驾驶），通过动态进度条实时展示当前模式能力边界。</p>
+                                <div class="level-indicator">
+                                    <div class="level-bar">
+                                        <div class="level-progress" style="width: 75%"></div>
+                                    </div>
+                                    <div class="level-labels">
+                                        <span>L0</span>
+                                        <span>L1</span>
+                                        <span>L2</span>
+                                        <span>L3</span>
+                                        <span>L4</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="strategy-card">
+                                <div class="card-header">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <h4>情景化教学模块</h4>
+                                </div>
+                                <p>用户首次触发新功能时，系统通过AR箭头标注操作区+语音分步引导，缩短学习路径至<15分钟。</p>
+                                <div class="feature-list">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>AR箭头标注</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>语音分步引导</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>实时操作反馈</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 超长屏幕空间效能优化 -->
+                    <div class="strategy-section">
+                        <h3>超长屏幕空间效能优化</h3>
+                        <div class="screen-layout">
+                            <div class="screen-section driver">
+                                <h4>主驾驶侧功能</h4>
+                                <div class="feature-grid">
+                                    <div class="feature-item">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                        <span>3D车道级导航</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-hand-paper"></i>
+                                        <span>手势快捷指令</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-vr-cardboard"></i>
+                                        <span>AR仪表盘</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="screen-section passenger">
+                                <h4>副驾驶侧功能</h4>
+                                <div class="feature-grid">
+                                    <div class="feature-item">
+                                        <i class="fas fa-film"></i>
+                                        <span>离线娱乐模式</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-users"></i>
+                                        <span>乘客协作功能</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-sliders-h"></i>
+                                        <span>智能座舱环境控制</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 项目展示 -->
+                <section class="project-showcase">
+                    <div class="main-showcase">
+                        <img src="images/portfolio/portfolio3-detail1.webp" alt="系统整体展示">
+                    </div>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <img src="images/portfolio/portfolio3-detail2.webp" alt="交互细节1">
+                        </div>
+                        <div class="detail-item">
+                            <img src="images/portfolio/portfolio3-detail3.webp" alt="交互细节2">
+                        </div>
+                        <div class="detail-item">
+                            <img src="images/portfolio/portfolio3-detail4.webp" alt="交互细节3">
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="portfolio-navigation">
+                <a href="index.html#portfolio" class="back-button">
+                    <i class="fas fa-arrow-left"></i> 返回项目唱片架
+                </a>
+            </div>
+        </section>
+    </main>
+    <script src="orb.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

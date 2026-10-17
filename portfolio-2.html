@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100e13">
+  <meta name="description" content="知鹿 Noelle：让真实物体参与对话的儿童认知训练辅助设计。从特教课堂研究到 ABA 四阶段交互与软硬件原型。">
+  <title>知鹿 Noelle｜OXYGEN</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="zhilu.css">
+  <link rel="stylesheet" href="project-video.css">
+  <link rel="stylesheet" href="site-refine.css">
+</head>
+<body class="zl-body">
+  <canvas id="circleCanvas" aria-hidden="true"></canvas>
+  <header class="header zl-header"><nav aria-label="主导航"><a href="index.html" class="logo brand-wordmark" aria-label="OXYGEN，返回首页"><span class="brand-name">O<span class="brand-code">XYG</span>EN<span class="brand-period">.</span></span></a><ul><li><a href="index.html#about">关于我</a></li><li><a href="index.html#portfolio">创作</a></li><li><a href="index.html#contact">联系方式</a></li></ul><a class="header-back" href="index.html#portfolio">返回创作 ↗</a></nav><span class="zl-progress" aria-hidden="true"></span></header>
+  <main class="zl-page">
+    <section class="zl-hero" aria-labelledby="zl-title">
+      <div class="zl-topline"><span>03 / SELECTED WORKS</span><span>EDUCATION · INCLUSIVE DESIGN</span></div>
+      <div class="zl-hero-copy"><p class="zl-kicker">COGNITIVE LEARNING / 2025</p><h1 id="zl-title">知<span>鹿.</span></h1><p class="zl-hero-en">NOELLE — THE OBJECTS CAN TALK</p><h2>让物体开口，<br><em>让理解发生。</em></h2><p class="zl-hero-intro">一套面向有认知训练需求儿童的互动学习概念：让真实物品成为会对话的学习伙伴，连接孩子、教师与日常世界。</p><a href="#research" class="zl-link">进入设计故事 <span aria-hidden="true">↘</span></a></div>
+      <div class="zl-hero-bottom"><span>课程项目 · 2025.03—2025.05</span><span>FIELD RESEARCH → INTERACTION → PROTOTYPE</span></div>
+    </section>
+
+    <figure class="zl-cover"><img src="images/portfolio/portfolio2-bg.jpg" alt="知鹿认知训练 App 与会说话的小鹿装置" fetchpriority="high"><figcaption>01 / 知鹿 App 与拟人化装置概念</figcaption></figure>
+
+    <section class="zl-section zl-research" id="research" aria-labelledby="zl-research-title">
+      <div class="zl-heading"><span>01 / RESEARCH</span><h2 id="zl-research-title">一张苹果图片，<br>不等于<span>一颗苹果。</span></h2></div>
+      <p class="zl-lede">最初的方案依赖桌面调研与屏幕内容。走进杭州杨绫子学校后，我们发现二维卡片与真实物体之间仍有一道抽象门槛：看到图片、说出词语，并不一定意味着孩子能在生活里认出、使用它。</p>
+      <div class="zl-observation"><div class="zl-observation-index">FIELD NOTE <b>01—03</b></div><div class="zl-observation-list"><article><span>01</span><h3>抽象材料难迁移</h3><p>平面教材很难建立“图像—实物—用途”的完整联系。</p></article><article><span>02</span><h3>教师需要反复陪伴</h3><p>有效训练依赖一对一引导、重复练习和即时鼓励。</p></article><article><span>03</span><h3>同一任务不适合所有孩子</h3><p>认知水平与兴趣差异大，训练路径需要个性化调整。</p></article></div></div>
+      <div class="zl-turn"><span>THE PIVOT</span><p>从“再做一款练习 App”，<br>转向<span>让真实物品参与学习。</span></p></div>
+    </section>
+
+    <section class="zl-section zl-method" id="method" aria-labelledby="zl-method-title">
+      <div class="zl-heading"><span>02 / METHOD</span><h2 id="zl-method-title">把训练方法，<br>变成孩子愿意参与的<span>冒险。</span></h2></div>
+      <div class="zl-method-intro"><p>我们将 ABA 的任务分解、辨别、强化与应用原则，转译为“感知—理解—表达—泛化”四个连续阶段。每一步都有清晰目标，也为孩子留出探索空间。</p><span>点击阶段，探索交互逻辑 ↓</span></div>
+      <div class="zl-stage" aria-label="知鹿四阶段学习路径">
+        <div class="zl-stage-nav" role="tablist" aria-label="训练阶段">
+          <button class="zl-stage-tab is-active" id="zl-tab-1" type="button" role="tab" aria-controls="zl-panel-1" aria-selected="true" tabindex="0"><span>01</span><strong>感知</strong><small>PERCEPTION</small></button>
+          <button class="zl-stage-tab" id="zl-tab-2" type="button" role="tab" aria-controls="zl-panel-2" aria-selected="false" tabindex="-1"><span>02</span><strong>理解</strong><small>COMPREHENSION</small></button>
+          <button class="zl-stage-tab" id="zl-tab-3" type="button" role="tab" aria-controls="zl-panel-3" aria-selected="false" tabindex="-1"><span>03</span><strong>表达</strong><small>EXPRESSION</small></button>
+          <button class="zl-stage-tab" id="zl-tab-4" type="button" role="tab" aria-controls="zl-panel-4" aria-selected="false" tabindex="-1"><span>04</span><strong>泛化</strong><small>GENERALIZATION</small></button>
+        </div>
+        <div class="zl-stage-panels">
+          <article class="zl-stage-panel" id="zl-panel-1" role="tabpanel" aria-labelledby="zl-tab-1"><span>第一站 / 让物体出现</span><h3>先看见、再靠近。</h3><p>将技能拆成更小的单元，由小鹿带孩子观察生活中的实物，建立第一层感知联系。</p><div class="zl-stage-key">任务分解 / 真实物体</div></article>
+          <article class="zl-stage-panel" id="zl-panel-2" role="tabpanel" aria-labelledby="zl-tab-2" hidden><span>第二站 / 识别与选择</span><h3>从多个选项里找到它。</h3><p>通过物体识别与选择任务，帮助孩子辨别目标物品与干扰项，把词语和眼前的实物连接起来。</p><div class="zl-stage-key">辨别训练 / 即时确认</div></article>
+          <article class="zl-stage-panel" id="zl-panel-3" role="tabpanel" aria-labelledby="zl-tab-3" hidden><span>第三站 / 主动说出来</span><h3>让回答获得回应。</h3><p>小鹿以语音和表情引导孩子描述物体；正确回应得到鼓励，让“表达”成为愿意继续的互动。</p><div class="zl-stage-key">语言表达 / 正向强化</div></article>
+          <article class="zl-stage-panel" id="zl-panel-4" role="tabpanel" aria-labelledby="zl-tab-4" hidden><span>第四站 / 回到生活</span><h3>把学会的，用起来。</h3><p>把练习延伸到生活场景，让孩子从认识一个物品，逐步走向理解它的用途。</p><div class="zl-stage-key">情境应用 / 能力迁移</div></article>
+        </div>
+      </div>
+      <figure class="zl-stage-visual"><img src="images/portfolio/portfolio2-detail2.webp" alt="知鹿 App 的感知、理解、表达与泛化四阶段界面" loading="lazy"><figcaption>四阶段对话界面 / 项目视觉资料</figcaption></figure>
+    </section>
+
+    <section class="zl-section zl-system" id="system" aria-labelledby="zl-system-title">
+      <div class="zl-heading"><span>03 / EXPERIENCE</span><h2 id="zl-system-title">从认识孩子，<br>到<span>认识世界。</span></h2></div>
+      <p class="zl-lede">设计并非从一个“开始”按钮开始。它先了解孩子，再唤醒物体，通过对话完成训练，最后将进展变成教师与家长可回看的记录。</p>
+      <div class="zl-flow"><article><span>01 / PROFILE</span><h3>建立学习画像</h3><p>输入认知水平与兴趣，为后续内容确定起点。</p><img src="images/portfolio/portfolio2-detail4.webp" alt="知鹿学习画像设置界面" loading="lazy"></article><article><span>02 / RECOGNIZE</span><h3>识别真实物体</h3><p>视觉识别触发互动，让眼前的物品成为学习内容。</p><img src="images/portfolio/portfolio2-detail1.png" alt="小鹿装置与水瓶互动的使用场景" loading="lazy"></article><article><span>03 / DIALOGUE</span><h3>让物体参与对话</h3><p>语音、屏幕与触觉反馈共同引导儿童完成阶段任务。</p><img src="images/portfolio/portfolio2-detail3.png" alt="知鹿 App 对话训练展示" loading="lazy"></article></div>
+      <div class="zl-system-note"><span>04 / EVALUATE</span><p>训练时长与正确率被整理成可回看的进展，帮助照护者理解孩子的学习路径。</p></div>
+    </section>
+
+    <section class="zl-section zl-device" id="device" aria-labelledby="zl-device-title"><div class="zl-heading"><span>04 / PROTOTYPE</span><h2 id="zl-device-title">屏幕之外，<br>还有一个会回应的<span>伙伴。</span></h2></div><div class="zl-device-layout"><div class="zl-device-copy"><p>小鹿装置以硅胶绑带附着在日常物品上，用拟人化表情与声音让静态物品获得“性格”。装置与 App 共同承担训练引导，而不是把所有注意力留在手机里。</p><div class="zl-feedback"><div><span>VISUAL</span><strong>OLED 表情</strong></div><div><span>AUDIO</span><strong>角色语音</strong></div><div><span>HAPTIC</span><strong>振动回应</strong></div></div></div><figure><img src="images/portfolio/portfolio2-detail1.png" alt="小鹿装置附着在水瓶上的原型使用场景" loading="lazy"><figcaption>真实物品 + 拟人化装置 / 原型场景</figcaption></figure></div></section>
+
+    <section class="project-film" id="project-film" aria-labelledby="zl-film-title">
+      <div class="project-film-heading"><span class="project-film-index">05 / PROJECT FILM</span><div><p class="project-film-kicker">MEET NOELLE · THE PROJECT FILM</p><h2 id="zl-film-title">让小鹿带你，<br>走进<span>真实的世界。</span></h2></div></div>
+      <p class="project-film-intro">从课堂观察到可回应的物体，观看知鹿项目影片，感受这套学习体验的整体构想。</p>
+      <div class="project-film-frame" data-film="知鹿">
+        <button class="project-film-launch" type="button" aria-label="播放知鹿项目影片"><img src="images/portfolio/portfolio2-detail1.png" alt="知鹿小鹿装置附着在水瓶上的场景" loading="lazy"><span class="project-film-shade" aria-hidden="true"></span><span class="project-film-play" aria-hidden="true"><span>▶</span></span><span class="project-film-preview" aria-hidden="true">PLAY THE FILM <b>↗</b></span></button>
+        <video class="project-film-video" controls playsinline preload="none" aria-label="知鹿项目影片" hidden><source data-src="video/知鹿.mp4" type="video/mp4">您的浏览器不支持视频播放。</video>
+      </div>
+      <div class="project-film-caption"><span>03 / 知鹿 · 项目影片</span><span>点击播放 · 可全屏观看</span></div>
+    </section>
+
+    <section class="zl-section zl-reflection" id="reflection" aria-labelledby="zl-reflection-title"><div class="zl-heading"><span>06 / REFLECTION</span><h2 id="zl-reflection-title">走进课堂后，<br>设计才真正<span>开始。</span></h2></div><div class="zl-reflection-grid"><article><span>我的角色</span><h3>UI / UX 设计主导</h3><p>把 ABA 框架转成具体交互流程，并根据实地研究定义核心功能需求。</p></article><article><span>关键改变</span><h3>从假设转向现场</h3><p>与特教学校合作、访谈教师并观察课堂后，团队把纯软件方向调整为“真实物体 + 装置 + App”的组合。</p></article><article><span>下一步思考</span><h3>让家庭也参与</h3><p>若继续迭代，计划更早访谈家长，研究课堂以外的练习与反馈如何衔接。</p></article></div><p class="zl-source-note">这是课程项目的设计方案；页面展示的训练流程与原型以项目材料为依据。</p></section>
+
+    <section class="zl-finale" aria-labelledby="zl-finale-title"><span>NOELLE / THE NEXT CHAPTER</span><h2 id="zl-finale-title">认识一个物体，<br>也是认识<span>更大的世界。</span></h2><div><a href="index.html#portfolio">返回项目唱片架 ↗</a><a href="portfolio-3.html">下一个作品：智能驾驶 →</a></div></section>
+  </main>
+  <script src="orb.js"></script><script src="zhilu.js"></script>
+  <script src="project-video.js"></script>
+</body>
+</html>

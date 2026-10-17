@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OXYGEN，高宇轩的个人网站：设计项目、平面视觉，以及逐步收录的摄影、音乐与日常观察。">
+    <title>OXYGEN｜高宇轩的个人网站</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="personal.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="site-refine.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="home-body">
+    <header class="header" id="site-header">
+        <nav aria-label="主导航">
+            <a href="#top" class="logo brand-wordmark" aria-label="OXYGEN，返回首页"><span class="brand-name">O<span class="brand-code">XYG</span>EN<span class="brand-period">.</span></span></a>
+            <button class="menu-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
+            <ul id="primary-nav">
+                <li><a href="#about"><span>01</span>关于</a></li>
+                <li><a href="#portfolio"><span>02</span>创作</a></li>
+                <li><a href="photo-journal.html"><span>03</span>记录</a></li>
+                <li><a href="#contact"><span>04</span>联系</a></li>
+            </ul>
+            <a href="#contact" class="header-contact"><span class="status-dot" aria-hidden="true"></span> LET'S TALK <span aria-hidden="true">↗</span></a>
+        </nav>
+        <span class="header-progress" aria-hidden="true"></span>
+    </header>
+    <canvas id="circleCanvas" aria-hidden="true"></canvas>
+    <section class="content hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-grain" aria-hidden="true"></div>
+        <div class="hero-inner">
+            <div class="hero-topline"><span class="hero-brand"><span class="hero-spark" aria-hidden="true">✳</span> O<span>XYG</span>EN <i>/ PERSONAL SPACE</i></span><span>DESIGN · IMAGE · SOUND</span></div>
+            <div class="hero-main">
+                <p class="hero-pretitle">你好，我是高宇轩。<span>欢迎来到我的个人空间。</span></p>
+                <h1 id="hero-title"><span class="hero-title-solid">GAO</span><span class="hero-title-outline">YUXUAN<span class="hero-title-dot">.</span></span></h1>
+                <div class="hero-identity"><span>DESIGN & MAKING</span><span class="hero-identity-line" aria-hidden="true"></span><span>THINGS I NOTICE</span></div>
+            </div>
+            <div class="hero-bottomline">
+                <p>做设计，也收藏<br>沿途遇见的画面与声音。</p>
+                <a href="#spaces" class="hero-work-link"><span>逛逛这里</span><span class="hero-work-icon" aria-hidden="true">↘</span></a>
+                <a href="#spaces" class="hero-scroll"><span>SCROLL TO EXPLORE</span><span class="hero-scroll-line" aria-hidden="true"></span><span>↓</span></a>
+            </div>
+        </div>
+        <button class="sphere-interaction-hint" type="button" aria-label="触发星体旋转和光波"><span aria-hidden="true">✳</span> DRAG TO ROTATE <i aria-hidden="true"></i> TAP TO REACT</button>
+        <span class="hero-edge-label" aria-hidden="true">WORKS, IMAGES & THINGS WORTH SHARING — OXYGEN © 2026</span>
+    </section>
+    <main class="main-section">
+        <section id="spaces" class="space-index" aria-labelledby="spaces-title">
+            <div class="space-index-heading"><span class="space-kicker">EXPLORE / 这个空间</span><h2 id="spaces-title">这里不只放<span>作品。</span></h2><p>设计是起点。拍下的画面、反复听的音乐，以及新的兴趣，也会慢慢来到这里。</p></div>
+            <div class="space-grid">
+                <a class="space-card space-card-create" href="#portfolio"><span class="space-card-top"><small>01 / CREATE</small><span aria-hidden="true">↗</span></span><span class="space-card-art space-create-art" aria-hidden="true"><i></i><i></i><b>O₂</b></span><span class="space-card-bottom"><strong>创作</strong><em>项目设计 · 平面视觉</em></span></a>
+                <a class="space-card space-card-photo" href="photo-journal.html" aria-label="进入记录，探索摄影旅程地图"><span class="space-card-top"><small>02 / OBSERVE</small><span>探索地图 ↗</span></span><span class="space-card-art space-photo-art" aria-hidden="true"><i></i><i></i><i></i><b>◎</b></span><span class="space-card-bottom"><strong>记录</strong><em>摄影 · 旅程地图</em></span></a>
+                <article class="space-card space-card-collect"><span class="space-card-top"><small>03 / COLLECT</small><span>待收录</span></span><span class="space-card-art space-collect-art" aria-hidden="true"><span class="collect-note collect-note-back"><small>THINGS TO KEEP</small><i></i><i></i><i></i></span><span class="collect-note collect-note-front"><small>OXYGEN / 03</small><b>✳</b><em>LISTEN<br>LOOK<br>REMEMBER</em></span><span class="collect-tab">SAVED <span>↗</span></span></span><span class="space-card-bottom"><strong>收藏</strong><em>音乐推荐 · 灵感清单</em></span></article>
+            </div>
+        </section>
+        <section id="about" class="about about-v2" aria-labelledby="about-title">
+            <div class="about-shell">
+                <div class="about-section-meta">
+                    <span class="about-section-index">01 / ABOUT</span>
+                    <span class="about-section-line" aria-hidden="true"></span>
+                    <span>个人介绍</span>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="about-eyebrow"><span class="about-dot" aria-hidden="true"></span> 你好，我是高宇轩</p>
+                        <h2 id="about-title" class="about-name">让设计，<br><em>有感知的温度。</em></h2>
+                        <p class="about-role">Product Designer <span aria-hidden="true">/</span> UX & Interaction Design</p>
+                        <p class="about-description">从工业设计出发，现在新加坡国立大学继续探索工程设计与创新。曾在网易雷火参与游戏用户体验设计，我关注复杂的产品如何变得清晰、自然，也会在这里收藏摄影、音乐与日常发现。</p>
+                        <a href="#portfolio" class="about-cta"><span>看看我的创作</span><span class="about-cta-arrow" aria-hidden="true">↗</span></a>
+                    </div>
+
+                    <div class="about-photo">
+                        <div class="about-portrait-wrap">
+                            <div class="about-portrait-top"><span>GAO YUXUAN</span><span>PROFILE / 001</span></div>
+                            <button class="photo-card" type="button" aria-label="查看另一张照片" aria-pressed="false">
+                                <span class="photo-card-inner">
+                                    <span class="photo-card-front"><img src="images/avatar/avatar1.jpg" alt="高宇轩在海边的照片"></span>
+                                    <span class="photo-card-back"><img src="images/avatar/avatar2.jpg" alt="一张有趣的羊群照片"></span>
+                                </span>
+                            </button>
+                            <div class="about-portrait-bottom"><span class="portrait-caption">BEYOND THE WORK</span><span class="portrait-toggle-hint">点击翻转照片 <span aria-hidden="true">↗</span></span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-details">
+                    <div class="about-detail about-detail-education">
+                        <div class="about-detail-label"><span>01</span><h3>教育背景 <small>EDUCATION</small></h3></div>
+                        <div class="about-education-list">
+                            <div class="about-education"><span class="education-years">2026.08 — NOW</span><div><h4>新加坡国立大学</h4><p>工程设计与创新 · 理学硕士</p><small>MSc in Engineering Design &amp; Innovation</small></div></div>
+                            <div class="about-education"><span class="education-years">2022.09 — 2026.06</span><div><h4>浙江大学</h4><p>工业设计 · 本科</p><small>GPA 3.88 / 4.0</small></div></div>
+                        </div>
+                    </div>
+                    <div class="about-detail about-detail-awards">
+                        <div class="about-detail-label"><span>02</span><h3>奖项荣誉 <small>SELECTED HONORS</small></h3></div>
+                        <ol class="about-awards">
+                            <li><span class="about-award-mark" aria-hidden="true"><img src="images/awards/dia.svg" alt="" loading="lazy"></span><div class="about-award-copy"><span class="about-award-year">2025</span><strong>中国设计智造大奖（DIA）</strong><small>创新孵化组 · 铜奖</small></div></li>
+                            <li><span class="about-award-mark about-award-mark-4c" aria-hidden="true"><img src="images/awards/computer-design-competition.jpg" alt="" loading="lazy"></span><div class="about-award-copy"><span class="about-award-year">2025</span><strong>中国大学生计算机设计大赛</strong><small>国赛二等奖 · 社会责任创新奖</small></div></li>
+                            <li><span class="about-award-mark about-award-mark-a" aria-hidden="true"><img src="images/awards/a-design-award.gif" alt="" loading="lazy"></span><div class="about-award-copy"><span class="about-award-year">2024—25</span><strong>A' Design Award &amp; Competition</strong><small>Iron A' Design Award × 2</small></div></li>
+                        </ol>
+                    </div>
+                    <div class="about-detail about-detail-tools">
+                        <div class="about-detail-label"><span>03</span><h3>设计工具 <small>TOOLKIT</small></h3></div>
+                        <div class="about-skills">
+                            <div class="about-skill"><span class="about-skill-icon about-skill-icon-figma" aria-hidden="true"><img src="images/skills/figma.png" alt="" loading="lazy"></span><span>Figma</span></div>
+                            <div class="about-skill"><span class="about-skill-icon" aria-hidden="true"><img src="images/skills/rhino.jpg" alt="" loading="lazy"></span><span>Rhino</span></div>
+                            <div class="about-skill"><span class="about-skill-icon about-skill-icon-keyshot" aria-hidden="true"><img src="images/skills/keyshot.png" alt="" loading="lazy"></span><span>KeyShot</span></div>
+                            <div class="about-skill"><span class="about-skill-icon" aria-hidden="true"><img src="images/skills/ps.jpg" alt="" loading="lazy"></span><span>Photoshop</span></div>
+                            <div class="about-skill"><span class="about-skill-icon about-skill-icon-premiere" aria-hidden="true"><img src="images/skills/pr.webp" alt="" loading="lazy"></span><span>Premiere</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio" class="portfolio album-section" aria-labelledby="portfolio-heading">
+            <div class="album-header">
+                <div>
+                    <p class="album-kicker">02 / CREATE · SELECTED PROJECTS</p>
+                    <h2 id="portfolio-heading">项目<span>唱片架.</span></h2>
+                </div>
+                <p class="album-intro">每个项目，都是一段值得重听的设计过程。<br>在封面上滑动或使用滚轮，挑选一张开始探索。</p>
+            </div>
+            <div class="album-controls">
+                <span class="album-collection-label">THE COLLECTION <span id="album-total">/ 00</span></span>
+                <div class="album-arrows">
+                    <button type="button" class="album-arrow" data-direction="prev" aria-label="上一张专辑">←</button>
+                    <button type="button" class="album-arrow" data-direction="next" aria-label="下一张专辑">→</button>
+                </div>
+            </div>
+            <div class="album-viewport" id="album-viewport" tabindex="0" aria-label="作品专辑列表，可用滚轮或左右方向键浏览">
+                <div class="album-track" id="album-track"></div>
+            </div>
+            <div class="album-now-playing" aria-live="polite">
+                <span class="album-now-index" id="album-current-index">01 / 05</span>
+                <div class="album-now-copy"><span>NOW SELECTING</span><h3 id="album-current-title">轻脑</h3><p id="album-current-description">偏头痛干预设备的工程与体验创新</p></div>
+                <a id="album-current-link" href="portfolio-1.html">查看项目 <span aria-hidden="true">↗</span></a>
+            </div>
+            <a class="graphic-gateway" href="graphic-design.html" aria-label="浏览平面设计分类页面">
+                <span class="graphic-gateway-copy"><small>THE OTHER SIDE / 视觉练习</small><strong>翻到另一面，<br>看见<span>平面设计.</span></strong><em>查看设计分类 <span aria-hidden="true">↗</span></em></span>
+                <span class="graphic-gateway-art" aria-hidden="true"><span class="graphic-gateway-sheet sheet-back">O / 01</span><span class="graphic-gateway-sheet sheet-front"><b>O₂</b><i>GRAPHIC<br>ARCHIVE</i><small>TYPE · IMAGE · COMPOSITION</small></span></span>
+            </a>
+        </section>
+        <section id="contact" class="reach-section" aria-labelledby="reach-title">
+            <div class="reach-heading">
+                <p class="reach-kicker">04 / CONTACT</p>
+                <h2 id="reach-title">来<span>聊聊.</span></h2>
+                <p class="reach-lede">合作或交流，随时联系。</p>
+                <div class="reach-record-area">
+                    <button class="reach-record" type="button" aria-label="转动唱片" aria-pressed="false">
+                        <span class="reach-record-label" aria-hidden="true"><small>OXYGEN / B</small><strong>HELLO</strong><i></i></span>
+                    </button>
+                    <span class="reach-tonearm" aria-hidden="true"></span>
+                    <span class="reach-record-hint" aria-live="polite">点击唱片转动 ↗</span>
+                </div>
+            </div>
+
+            <div class="reach-directory reach-directory--single" aria-label="邮箱联系">
+                <a class="reach-main-link" href="mailto:gyx16356@163.com" aria-label="发送邮件到 gyx16356@163.com">
+                    <span class="reach-number">01 / START HERE</span>
+                    <span class="reach-mail-copy"><span class="reach-label">EMAIL ME</span><strong>gyx16356<br>@163.com</strong><small>点击打开邮件应用</small></span>
+                    <span class="reach-main-arrow" aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+            <div class="reach-bottom"><span>OXYGEN © 2026 · DESIGN, WITH CURIOSITY.</span><a href="#top">回到顶部 ↑</a></div>
+            <div class="reach-toast" role="status" aria-live="polite"></div>
+        </section>
+    </main>
+    <script src="orb.js"></script>
+    <script src="script.js"></script>
+    <script src="portfolio.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html> 

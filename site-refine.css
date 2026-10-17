@@ -1,0 +1,120 @@
+/* Shared identity and editorial rhythm across the personal site. */
+:root { --site-accent:#d9bafb; --site-line:rgba(228,211,248,.22); }
+body { font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif; }
+
+.header { height:76px; padding-inline:clamp(20px,4.2vw,72px); border-bottom:1px solid var(--site-line); box-shadow:none; backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
+.header nav { display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:30px; width:100%; max-width:1440px; height:100%; padding:0; margin-inline:auto; }
+.header nav ul { display:flex; flex-direction:row; align-items:center; gap:clamp(18px,2.8vw,42px); padding:0; margin:0; }
+.header nav ul li { margin:0; }
+.header nav ul li a { color:#c9c3d1; font-size:12px; font-weight:500; letter-spacing:.09em; white-space:nowrap; }
+.header nav ul li a::after { height:1px; }
+.header .logo.brand-wordmark { display:inline-flex; flex:none; align-items:center; margin:0; padding:0; color:#f8f5fb; font:900 clamp(24px,2.25vw,30px)/1 Arial,Helvetica,sans-serif; letter-spacing:-.088em; white-space:nowrap; text-decoration:none; }
+.header .logo.brand-wordmark::before { display:none; }
+.brand-name { display:inline-block; transition:letter-spacing .35s ease; }
+.brand-code { position:relative; color:var(--site-accent); text-shadow:0 0 22px rgba(208,168,248,.19); transition:color .3s ease,text-shadow .3s ease; }
+.brand-code::after { content:""; position:absolute; left:2px; right:1px; bottom:-4px; height:2px; background:currentColor; transform:scaleX(.78); transform-origin:left; transition:transform .35s ease; }
+.brand-period { color:var(--site-accent); }
+.brand-wordmark:hover .brand-name { letter-spacing:-.055em; }
+.brand-wordmark:hover .brand-code { color:#f2dfff; text-shadow:0 0 19px rgba(213,181,250,.55); }
+.brand-wordmark:hover .brand-code::after { transform:scaleX(1); }
+.header-back { display:none; }
+.header a:focus-visible { outline:2px solid var(--site-accent); outline-offset:6px; }
+
+.home-body .header { height:78px; }
+.home-body .header.is-scrolled { height:68px; }
+.home-body .hero-topline .hero-brand { display:inline-block; font-size:12px; font-weight:800; letter-spacing:.12em; color:#f0e8f6; white-space:nowrap; }
+.home-body .hero-brand .hero-spark { display:inline-block; margin-right:12px; vertical-align:middle; }
+.home-body .hero-brand>span:not(.hero-spark) { color:var(--site-accent); }
+.home-body .hero-brand i { margin-left:13px; color:#9d94ab; font-size:10px; font-style:normal; font-weight:500; letter-spacing:.2em; }
+.home-body .hero-topline { padding-top:38px; }
+.home-body .hero-main { max-width:1100px; }
+.home-body .hero-pretitle { line-height:1.65; }
+.home-body .hero h1 { max-width:100%; }
+.home-body .main-section #spaces.space-index { max-width:1400px; margin:0 auto 110px; }
+.home-body .space-grid { gap:16px; }
+.home-body .space-card { min-height:380px; }
+.home-body .main-section #about.about-v2 { margin-bottom:100px; }
+.home-body .main-section .album-section { margin-bottom:100px; }
+.home-body .album-header,.home-body .album-controls,.home-body .album-now-playing,.home-body .graphic-gateway { width:min(100% - 40px,1200px); }
+.home-body .album-header { align-items:end; }
+.home-body .album-intro { max-width:345px; }
+
+.qn-body { --site-accent:#bea5ff; }
+.zl-body { --site-accent:#f3b995; }
+.zn-body { --site-accent:#d4f28f; }
+.gd-body { --site-accent:#dabaf5; }
+.legacy-project-body { --site-accent:#cdb3f6; }
+.qn-hero,.zl-hero,.zn-hero,.gd-hero { max-width:1440px; }
+.qn-section,.zl-section,.zn-section,.gd-catalog { max-width:1360px; padding-block:clamp(92px,10vw,148px); }
+.qn-section h2,.qn-end h2,.zl-section h2,.zl-finale h2,.zn-section h2,.zn-finale h2,.gd-catalog-head h2 { font-size:clamp(42px,5.1vw,74px); line-height:1.2; letter-spacing:-.045em; overflow-wrap:break-word; }
+.qn-section-heading,.zl-heading,.zn-section-head { grid-template-columns:minmax(135px,.78fr) minmax(0,2.8fr); gap:clamp(22px,4vw,60px); }
+.qn-hero-copy,.zl-hero-copy,.zn-hero-copy,.gd-hero-copy { min-width:0; }
+.qn-hero h1,.zl-hero h1,.zn-hero h1 { line-height:1; }
+.qn-hero-summary,.zl-hero-intro,.zn-hero-desc { max-width:56ch; }
+.project-film h2 { overflow-wrap:break-word; }
+.gd-hero-body { gap:clamp(30px,5vw,72px); }
+.gd-category { min-width:0; }
+
+.legacy-project-body .main-section { max-width:none; padding:0; }
+.legacy-project-body .main-section > .portfolio-detail { margin-bottom:0; }
+.legacy-project-body .portfolio-detail { max-width:1280px; padding:clamp(138px,12vw,180px) clamp(24px,6vw,84px) 125px; }
+.legacy-project-body .portfolio-header { margin-bottom:64px; padding:0 0 44px; border-bottom:1px solid var(--site-line); text-align:left; }
+.legacy-project-body .portfolio-header::before { content:"SELECTED PROJECT / OXYGEN"; display:block; margin-bottom:30px; color:var(--site-accent); font-size:11px; font-weight:700; letter-spacing:.2em; }
+.legacy-project-body .portfolio-header h1 { max-width:18ch; margin:0 0 24px; color:#f7f4fb; font-size:clamp(40px,5.3vw,76px); font-weight:700; line-height:1.17; letter-spacing:-.05em; text-wrap:balance; overflow-wrap:break-word; }
+.legacy-project-body .portfolio-subtitle { max-width:650px; color:#bcb4c9; font-size:17px; line-height:1.75; }
+.legacy-project-body .portfolio-meta { justify-content:flex-start; flex-wrap:wrap; gap:12px 30px; color:var(--site-accent); font-size:12px; }
+.legacy-project-body .project-overview,.legacy-project-body .project-showcase { margin:0 0 82px; padding:36px 0 0; background:none; border:0; border-top:1px solid var(--site-line); border-radius:0; backdrop-filter:none; }
+.legacy-project-body .project-overview h2,.legacy-project-body .project-details h2,.legacy-project-body .project-process h2 { margin:0 0 28px; padding:0; color:#f6f2fb; font-size:clamp(28px,3.3vw,43px); font-weight:600; line-height:1.25; letter-spacing:-.035em; text-align:left; }
+.legacy-project-body .project-overview h2::before { display:none; }
+.legacy-project-body .project-overview p,.legacy-project-body .overview-card p { max-width:76ch; margin-bottom:28px; color:#c6bfce; font-size:clamp(15px,1.35vw,18px); line-height:1.9; }
+.legacy-project-body .overview-card { margin:0; padding:0; background:none; border:0; border-radius:0; box-shadow:none; backdrop-filter:none; }
+.legacy-project-body .overview-card:hover { transform:none; box-shadow:none; }
+.legacy-project-body .challenge-cards,.legacy-project-body .features-grid,.legacy-project-body .system-cards,.legacy-project-body .core-features,.legacy-project-body .process-steps { gap:14px; margin-block:32px; }
+.legacy-project-body :is(.challenge-card,.feature-card,.system-card,.core-card,.step,.project-details li) { min-width:0; padding:clamp(24px,3vw,36px); background:rgba(25,22,34,.72); border:1px solid var(--site-line); border-radius:3px; box-shadow:none; text-align:left; }
+.legacy-project-body :is(.challenge-card,.feature-card,.system-card,.core-card,.step):hover { background:rgba(48,38,64,.75); transform:translateY(-4px); }
+.legacy-project-body .main-showcase,.legacy-project-body .detail-item { border-radius:3px; }
+.legacy-project-body .project-details,.legacy-project-body .project-process { margin:0 0 82px; padding-top:36px; border-top:1px solid var(--site-line); }
+.legacy-project-body .portfolio-navigation { margin-top:80px; padding-top:30px; border-top:1px solid var(--site-line); text-align:left; }
+.legacy-project-body .back-button { padding:0 0 11px; background:none; border:0; border-bottom:1px solid var(--site-accent); border-radius:0; box-shadow:none; color:var(--site-accent); }
+
+@media (max-width:900px) {
+  .qn-section-heading,.zl-heading,.zn-section-head { grid-template-columns:1fr; gap:18px; }
+  .qn-section h2,.qn-end h2,.zl-section h2,.zl-finale h2,.zn-section h2,.zn-finale h2 { font-size:clamp(39px,7.5vw,64px); }
+  .gd-hero h1 { white-space:normal; }
+  .legacy-project-body .challenge-cards { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:700px) {
+  body:not(.home-body) .header { height:64px; padding-inline:20px; }
+  body:not(.home-body) .header nav { flex-direction:row; height:100%; padding:0; gap:12px; }
+  body:not(.home-body) .header nav ul { display:none; }
+  .header .logo.brand-wordmark { font-size:23px; }
+  body:not(.home-body) .header .header-back { display:inline-flex; align-items:center; margin-left:auto; padding:9px 0; color:var(--site-accent); font-size:12px; letter-spacing:.08em; text-decoration:none; white-space:nowrap; }
+  .home-body .header,.home-body .header.is-scrolled { height:66px; }
+  .home-body .header nav { gap:12px; }
+  .home-body .header nav ul { flex-direction:column; align-items:stretch; gap:0; }
+  .home-body .hero-topline .hero-brand { font-size:10px; }
+  .home-body .hero-brand i { margin-left:7px; font-size:8px; }
+  .home-body .main-section #spaces.space-index { margin-bottom:72px; }
+  .home-body .space-card { min-height:310px; }
+  .home-body .main-section #about.about-v2,.home-body .main-section .album-section { margin-bottom:75px; }
+  .home-body .album-header,.home-body .album-controls,.home-body .album-now-playing,.home-body .graphic-gateway { width:calc(100% - 40px); }
+  .qn-section,.zl-section,.zn-section,.gd-catalog { padding-block:82px; }
+  .qn-hero,.zl-hero,.zn-hero,.gd-hero { padding-top:94px; }
+  .qn-section h2,.qn-end h2,.zl-section h2,.zl-finale h2,.zn-section h2,.zn-finale h2,.gd-catalog-head h2 { font-size:clamp(36px,8vw,52px); line-height:1.24; }
+  .gd-hero h1 { font-size:clamp(52px,12.5vw,90px); }
+  .gd-hero-body { grid-template-columns:1fr; gap:0; }
+  .gd-hero-intro { margin-top:28px; }
+  .legacy-project-body .portfolio-detail { padding:110px 22px 85px; }
+  .legacy-project-body .portfolio-header { margin-bottom:45px; padding-bottom:32px; }
+  .legacy-project-body .portfolio-header h1 { font-size:clamp(38px,9.5vw,57px); }
+  .legacy-project-body .project-overview,.legacy-project-body .project-showcase,.legacy-project-body .project-details,.legacy-project-body .project-process { margin-bottom:62px; }
+  .legacy-project-body .challenge-cards,.legacy-project-body .features-grid,.legacy-project-body .system-cards,.legacy-project-body .core-features,.legacy-project-body .process-steps { grid-template-columns:1fr; }
+}
+@media (max-width:400px) {
+  .home-body .hero-brand i { display:none; }
+  .header .logo.brand-wordmark { font-size:21px; }
+  .gd-hero-art { max-width:100%; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .brand-name,.brand-code,.brand-code::after { transition:none; }
+}

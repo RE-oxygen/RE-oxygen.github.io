@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07151b">
+  <meta name="description" content="OXYGEN 的摄影记录：转动地球，按地点或旅程浏览沿途的照片与片段。">
+  <title>记录 · 旅程地图｜OXYGEN</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="site-refine.css">
+  <link rel="stylesheet" href="photo-journal.css">
+</head>
+<body class="journal-body">
+  <header class="header journal-header">
+    <nav aria-label="主导航">
+      <a class="logo brand-wordmark" href="index.html" aria-label="OXYGEN，返回首页"><span class="brand-name">O<span class="brand-code">XYG</span>EN<span class="brand-period">.</span></span></a>
+      <ul><li><a href="index.html#about">关于</a></li><li><a href="index.html#portfolio">创作</a></li><li><a href="photo-journal.html" aria-current="page">记录</a></li><li><a href="index.html#contact">联系</a></li></ul>
+      <a class="header-back" href="index.html#spaces">返回首页 ↗</a>
+    </nav>
+  </header>
+
+  <main class="journal-page">
+    <section class="journal-intro" aria-labelledby="journal-title">
+      <div class="journal-intro-main">
+        <p class="journal-overline"><span class="journal-overline-dot" aria-hidden="true"></span> 03 / OBSERVE · PHOTO JOURNAL</p>
+        <h1 id="journal-title">把路过的世界，<br><em>慢慢记录下来。</em></h1>
+        <p class="journal-lede">每段旅程，都可以从地球上的一个点开始。转动地图，选一处地点，翻看在那里留下的画面。</p>
+        <a class="journal-jump" href="#explore">开始探索 <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="journal-intro-aside" aria-hidden="true"><span>OXYGEN / FIELD NOTES</span><strong>EARTH<br>IS A<br>PHOTO<br>ALBUM<span>.</span></strong><small>DRAG · FIND · REMEMBER</small></div>
+    </section>
+
+    <section class="journal-explorer" id="explore" aria-label="交互式旅程地图">
+      <div class="journal-section-line"><span>THE WORLD / 旅程地图</span><span>01 — EXPLORE</span></div>
+      <div class="journal-explorer-grid">
+        <div class="journal-globe-panel">
+          <div class="journal-globe-top"><span>INTERACTIVE EARTH</span><span class="journal-live"><i aria-hidden="true"></i> ROTATE THE WORLD</span></div>
+          <div class="journal-globe-stage">
+            <canvas id="journey-globe" tabindex="0" aria-label="可旋转的地球；拖动旋转，方向键移动，回车选择正面的示意地点"></canvas>
+            <div class="journal-globe-corner journal-globe-corner-tl" aria-hidden="true"></div><div class="journal-globe-corner journal-globe-corner-br" aria-hidden="true"></div>
+            <div class="journal-coordinate" id="journal-coordinate" aria-live="polite">35.7° N&nbsp; / &nbsp;139.7° E</div>
+          </div>
+          <div class="journal-globe-bottom"><p>拖动地球旋转 · 点击光点选择旅程<br>也可以使用方向键和下方按钮 · 地图数据 <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth</a></p><div class="journal-globe-controls" aria-label="地球控制"><button type="button" data-globe-control="left" aria-label="向左旋转">←</button><button type="button" data-globe-control="right" aria-label="向右旋转">→</button><button type="button" data-globe-control="zoom-out" aria-label="缩小地球">−</button><button type="button" data-globe-control="zoom-in" aria-label="放大地球">+</button><button type="button" data-globe-control="reset" aria-label="回到选中地点">↺</button></div></div>
+        </div>
+
+        <aside class="journal-journeys" aria-labelledby="journey-list-title">
+          <div class="journal-journeys-head"><div><span>CHOOSE A JOURNEY</span><h2 id="journey-list-title">选择一段<span>旅程.</span></h2></div><small id="journey-count">00 / 00</small></div>
+          <p class="journal-demo-note" id="journal-demo-note">现在显示的是交互示意点。照片和真实地点加入后，会在这里组成你的旅程目录。</p>
+          <div class="journal-journey-list" id="journey-list"></div>
+          <a class="journal-journeys-foot" href="#journey-story"><span>查看这一段旅程</span><span aria-hidden="true">↘</span></a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="journal-story" id="journey-story" aria-labelledby="story-title">
+      <div class="journal-section-line"><span>SELECTED CHAPTER / 选中的旅程</span><span>02 — VIEW</span></div>
+      <div class="journal-story-grid">
+        <div class="journal-story-copy"><span class="journal-story-index" id="story-index">01 / SAMPLE JOURNEY</span><h2 id="story-title">旅程 01<span>.</span></h2><p id="story-description">这是一个示意位置。以后可以在这里写下出发的缘由、途中看到的细节，以及这组照片的故事。</p><dl class="journal-story-meta"><div><dt>地点</dt><dd id="story-place">示意位置 · 东亚</dd></div><div><dt>坐标</dt><dd id="story-coordinates">35.7° N / 139.7° E</dd></div><div><dt>照片</dt><dd id="story-photo-count">待添加</dd></div></dl></div>
+        <div class="journal-story-visual" id="story-visual" aria-hidden="true"><img class="journal-story-cover" id="story-cover" alt="" hidden><span>OXYGEN / OBSERVE</span><strong id="story-visual-number">01</strong><i>PLACEHOLDER<br>FOR A MEMORY</i><small>THE JOURNEY CONTINUES →</small></div>
+      </div>
+      <div class="journal-gallery-head"><h3>沿途画面<span>.</span></h3><span id="gallery-count">00 PHOTOS</span></div>
+      <div class="journal-gallery" id="journal-gallery"><div class="journal-empty"><span aria-hidden="true">✳</span><p>这一段旅程的照片，正在等待被放进来。</p><small>PHOTOGRAPHS WILL APPEAR HERE</small></div></div>
+    </section>
+
+    <footer class="journal-footer"><span>OXYGEN © 2026 / KEEP LOOKING</span><a href="index.html#spaces">回到个人空间 ↗</a></footer>
+  </main>
+
+  <dialog class="journal-lightbox" id="journal-lightbox" aria-label="查看旅程照片"><button class="journal-lightbox-close" type="button" aria-label="关闭照片">×</button><button class="journal-lightbox-prev" type="button" aria-label="上一张照片">←</button><figure><img id="lightbox-image" alt=""><figcaption id="lightbox-caption"></figcaption></figure><button class="journal-lightbox-next" type="button" aria-label="下一张照片">→</button></dialog>
+  <script src="natural-earth-land.js"></script>
+  <script src="photo-journeys.js"></script>
+  <script src="photo-journal.js"></script>
+</body>
+</html>
