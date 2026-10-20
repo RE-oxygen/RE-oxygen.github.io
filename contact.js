@@ -39,15 +39,12 @@
 
   const record = document.querySelector('.reach-record');
   const recordHint = document.querySelector('.reach-record-hint');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   record?.addEventListener('click', () => {
     const spinning = record.classList.toggle('is-spinning');
     record.setAttribute('aria-pressed', String(spinning));
     record.setAttribute('aria-label', spinning ? '暂停唱片' : '转动唱片');
     if (recordHint) {
-      recordHint.textContent = spinning
-        ? (reducedMotion.matches ? '唱片已点亮 · 点击复原' : '唱片转动中 · 点击暂停')
-        : '点击唱片转动 ↗';
+      recordHint.textContent = spinning ? 'PAUSE ↗' : 'PLAY ↗';
     }
   });
 })();

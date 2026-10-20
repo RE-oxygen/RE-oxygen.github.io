@@ -27,15 +27,15 @@ body { font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif; }
 .home-body .hero-brand>span:not(.hero-spark) { color:var(--site-accent); }
 .home-body .hero-brand i { margin-left:13px; color:#9d94ab; font-size:10px; font-style:normal; font-weight:500; letter-spacing:.2em; }
 .home-body .hero-topline { padding-top:38px; }
-.home-body .hero-main { max-width:1100px; }
+.home-body .hero-main { max-width:940px; }
 .home-body .hero-pretitle { line-height:1.65; }
 .home-body .hero h1 { max-width:100%; }
-.home-body .main-section #spaces.space-index { max-width:1400px; margin:0 auto 110px; }
+.home-body .main-section #spaces.space-index { max-width:1260px; margin:0 auto 88px; }
 .home-body .space-grid { gap:16px; }
-.home-body .space-card { min-height:380px; }
+.home-body .space-card { min-height:348px; }
 .home-body .main-section #about.about-v2 { margin-bottom:100px; }
-.home-body .main-section .album-section { margin-bottom:100px; }
-.home-body .album-header,.home-body .album-controls,.home-body .album-now-playing,.home-body .graphic-gateway { width:min(100% - 40px,1200px); }
+.home-body .main-section .album-section { margin-bottom:68px; }
+.home-body .album-header,.home-body .album-controls,.home-body .album-now-playing { width:min(100% - 40px,1160px); }
 .home-body .album-header { align-items:end; }
 .home-body .album-intro { max-width:345px; }
 
@@ -94,10 +94,11 @@ body { font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif; }
   .home-body .header nav ul { flex-direction:column; align-items:stretch; gap:0; }
   .home-body .hero-topline .hero-brand { font-size:10px; }
   .home-body .hero-brand i { margin-left:7px; font-size:8px; }
-  .home-body .main-section #spaces.space-index { margin-bottom:72px; }
+  .home-body .main-section #spaces.space-index { margin-bottom:62px; }
   .home-body .space-card { min-height:310px; }
-  .home-body .main-section #about.about-v2,.home-body .main-section .album-section { margin-bottom:75px; }
-  .home-body .album-header,.home-body .album-controls,.home-body .album-now-playing,.home-body .graphic-gateway { width:calc(100% - 40px); }
+  .home-body .main-section #about.about-v2 { margin-bottom:75px; }
+  .home-body .main-section .album-section { margin-bottom:52px; }
+  .home-body .album-header,.home-body .album-controls,.home-body .album-now-playing { width:calc(100% - 40px); }
   .qn-section,.zl-section,.zn-section,.gd-catalog { padding-block:82px; }
   .qn-hero,.zl-hero,.zn-hero,.gd-hero { padding-top:94px; }
   .qn-section h2,.qn-end h2,.zl-section h2,.zl-finale h2,.zn-section h2,.zn-finale h2,.gd-catalog-head h2 { font-size:clamp(36px,8vw,52px); line-height:1.24; }

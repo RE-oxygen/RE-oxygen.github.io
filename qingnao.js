@@ -33,4 +33,29 @@
   }
   makeTabs('.qn-hardware-tab', '.qn-hardware-panel');
   makeTabs('.qn-journey-step', '.qn-flow-copy article');
+
+  const appImages = [...document.querySelectorAll('.qn-app-open img')];
+  const appDialog = document.getElementById('qn-app-lightbox');
+  if (appDialog && appImages.length) {
+    const enlarged = document.getElementById('qn-app-lightbox-image');
+    const counter = document.getElementById('qn-app-lightbox-counter');
+    const stage = appDialog.querySelector('.qn-app-lightbox-stage');
+    let activeImage = 0;
+    const showImage = index => {
+      activeImage = (index + appImages.length) % appImages.length;
+      enlarged.src = appImages[activeImage].src;
+      enlarged.alt = appImages[activeImage].alt;
+      counter.textContent = `${String(activeImage + 1).padStart(2, '0')} / ${String(appImages.length).padStart(2, '0')}`;
+      stage.scrollTo(0, 0);
+      if (!appDialog.open) appDialog.showModal();
+    };
+    appImages.forEach((image, index) => image.closest('button').addEventListener('click', () => showImage(index)));
+    appDialog.querySelector('.qn-app-lightbox-close').addEventListener('click', () => appDialog.close());
+    appDialog.querySelector('.qn-app-lightbox-prev').addEventListener('click', () => showImage(activeImage - 1));
+    appDialog.querySelector('.qn-app-lightbox-next').addEventListener('click', () => showImage(activeImage + 1));
+    appDialog.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft') showImage(activeImage - 1);
+      if (event.key === 'ArrowRight') showImage(activeImage + 1);
+    });
+  }
 })();

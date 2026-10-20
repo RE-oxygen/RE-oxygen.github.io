@@ -279,8 +279,8 @@
     lightboxIndex = (index + photos.length) % photos.length;
     const photo = photos[lightboxIndex];
     lightboxImage.src = photo.src;
-    lightboxImage.alt = photo.alt || photo.caption || journeys[selectedIndex].title;
-    lightboxCaption.textContent = `${pad(lightboxIndex + 1)} / ${pad(photos.length)} · ${photo.caption || journeys[selectedIndex].place}`;
+    lightboxImage.alt = photo.alt || journeys[selectedIndex].title;
+    lightboxCaption.textContent = `${pad(lightboxIndex + 1)} / ${pad(photos.length)}`;
     if (!lightbox.open) lightbox.showModal();
   };
   lightbox.querySelector('.journal-lightbox-close').addEventListener('click', () => lightbox.close());
@@ -291,6 +291,96 @@
     if (event.key === 'ArrowLeft') showPhoto(lightboxIndex - 1);
     if (event.key === 'ArrowRight') showPhoto(lightboxIndex + 1);
   });
+
+  const itinerary = document.getElementById('journal-itinerary');
+  const itineraryRail = document.getElementById('itinerary-rail');
+  const itineraryPanel = document.getElementById('itinerary-panel');
+  const itineraryStops = document.getElementById('itinerary-stops');
+  const itineraryPrev = document.getElementById('itinerary-prev');
+  const itineraryNext = document.getElementById('itinerary-next');
+  let activeDay = 0;
+  let dayButtons = [];
+  const dayParts = date => {
+    const [year, month, day] = date.split('-');
+    return {year, month, day};
+  };
+  const selectDay = (index, focus = false) => {
+    const days = journeys[selectedIndex].itinerary || [];
+    if (!days.length) return;
+    activeDay = clamp(index, 0, days.length - 1);
+    const {month, day} = dayParts(days[activeDay].date);
+    document.getElementById('itinerary-day-number').textContent = pad(activeDay + 1);
+    document.getElementById('itinerary-date-label').textContent = `${month} / ${day}`;
+    document.getElementById('itinerary-detail-kicker').textContent = `DAY ${pad(activeDay + 1)} / ${days[activeDay].date}`;
+    itineraryStops.replaceChildren();
+    const stops = Array.isArray(days[activeDay].stops) ? days[activeDay].stops.filter(Boolean) : [];
+    if (stops.length) {
+      const route = document.createElement('ol');
+      route.className = 'journal-itinerary-route';
+      stops.forEach(stop => {
+        const item = document.createElement('li');
+        item.textContent = stop;
+        route.appendChild(item);
+      });
+      itineraryStops.appendChild(route);
+    } else {
+      const empty = document.createElement('span');
+      empty.className = 'journal-itinerary-empty';
+      empty.textContent = '地点待补充';
+      itineraryStops.appendChild(empty);
+    }
+    dayButtons.forEach((button, buttonIndex) => {
+      const selected = buttonIndex === activeDay;
+      button.classList.toggle('is-active', selected);
+      button.setAttribute('aria-selected', String(selected));
+      button.tabIndex = selected ? 0 : -1;
+    });
+    itineraryRail.style.setProperty('--itinerary-progress', `${((activeDay + .5) / days.length) * 100}%`);
+    itineraryPrev.disabled = activeDay === 0;
+    itineraryNext.disabled = activeDay === days.length - 1;
+    if (focus) dayButtons[activeDay].focus();
+    if (!reducedMotion.matches) {
+      itineraryPanel.animate([{opacity:.55, transform:'translateY(7px)'}, {opacity:1, transform:'translateY(0)'}], {duration:260, easing:'ease-out'});
+    }
+  };
+  const renderItinerary = journey => {
+    const days = Array.isArray(journey.itinerary) ? journey.itinerary : [];
+    itinerary.hidden = !days.length;
+    itineraryRail.replaceChildren();
+    dayButtons = days.map((entry, index) => {
+      const {month, day} = dayParts(entry.date);
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'journal-itinerary-day';
+      button.id = `itinerary-tab-${index}`;
+      button.setAttribute('role', 'tab');
+      button.setAttribute('aria-controls', 'itinerary-panel');
+      button.setAttribute('aria-label', `${entry.date}，第${index + 1}天`);
+      const marker = document.createElement('i');
+      marker.setAttribute('aria-hidden', 'true');
+      const number = document.createElement('small');
+      number.textContent = `DAY ${pad(index + 1)}`;
+      const label = document.createElement('strong');
+      label.textContent = `${month}.${day}`;
+      button.append(marker, number, label);
+      button.addEventListener('click', () => selectDay(index));
+      button.addEventListener('keydown', event => {
+        const target = event.key === 'ArrowRight' ? index + 1 : event.key === 'ArrowLeft' ? index - 1 : event.key === 'Home' ? 0 : event.key === 'End' ? days.length - 1 : null;
+        if (target === null) return;
+        event.preventDefault();
+        selectDay(clamp(target, 0, days.length - 1), true);
+      });
+      itineraryRail.appendChild(button);
+      return button;
+    });
+    if (!days.length) return;
+    const first = dayParts(days[0].date);
+    const last = dayParts(days[days.length - 1].date);
+    document.getElementById('itinerary-range').textContent = `${first.day} — ${last.day} / ${last.month}.${last.year}`;
+    selectDay(0);
+  };
+  itineraryPrev.addEventListener('click', () => selectDay(activeDay - 1));
+  itineraryNext.addEventListener('click', () => selectDay(activeDay + 1));
 
   const renderGallery = journey => {
     gallery.replaceChildren();
@@ -307,18 +397,17 @@
       const button = document.createElement('button');
       button.type = 'button';
       button.className = 'journal-photo';
-      button.setAttribute('aria-label', `查看照片${index + 1}：${photo.caption || photo.alt || journey.title}`);
+      button.setAttribute('aria-label', `查看照片${index + 1}：${photo.alt || journey.title}`);
       const image = document.createElement('img');
-      image.src = photo.src;
-      image.alt = photo.alt || photo.caption || journey.title;
+      image.src = photo.thumb || photo.src;
+      image.alt = photo.alt || journey.title;
       image.loading = 'lazy';
-      const caption = document.createElement('span');
-      caption.textContent = photo.caption || `画面 ${pad(index + 1)}`;
-      const icon = document.createElement('i');
-      icon.setAttribute('aria-hidden', 'true');
-      icon.textContent = '↗';
-      caption.appendChild(icon);
-      button.append(image, caption);
+      image.draggable = false;
+      const watermark = document.createElement('span');
+      watermark.className = 'journal-photo-mark';
+      watermark.setAttribute('aria-hidden', 'true');
+      watermark.textContent = 'OXYGEN ©';
+      button.append(image, watermark);
       button.addEventListener('click', () => showPhoto(index));
       gallery.appendChild(button);
     });
@@ -349,13 +438,14 @@
     const coverPhoto = journey.photos?.[0];
     fields.visual.classList.toggle('has-photo', Boolean(coverPhoto));
     fields.cover.hidden = !coverPhoto;
-    if (coverPhoto) fields.cover.src = coverPhoto.src;
+    if (coverPhoto) fields.cover.src = coverPhoto.thumb || coverPhoto.src;
     else fields.cover.removeAttribute('src');
     listButtons.forEach((button, buttonIndex) => {
       button.classList.toggle('is-active', buttonIndex === index);
       button.setAttribute('aria-pressed', String(buttonIndex === index));
     });
     renderGallery(journey);
+    renderItinerary(journey);
     if (reducedMotion.matches) { yaw = targetYaw; pitch = targetPitch; draw(); }
   }
 

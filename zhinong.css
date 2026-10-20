@@ -26,6 +26,24 @@ html { scroll-behavior:smooth; }
 .zn-cover-image img { object-position:center 50%; }
 .zn-full-image::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(5,18,9,.6),transparent 28%); pointer-events:none; }
 .zn-full-image figcaption { position:absolute; bottom:22px; right:clamp(24px,6vw,96px); z-index:1; color:#fff; font-size:11px; letter-spacing:.1em; }
+.zn-achievements { max-width:1360px; margin:0 auto; padding:0 clamp(24px,6vw,96px); display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(38px,6vw,88px); border-bottom:1px solid rgba(199,240,120,.17); }
+.zn-achievement-row { min-width:0; display:flex; flex-direction:column; align-items:flex-start; gap:25px; padding:clamp(56px,6vw,82px) 0; }
+.zn-achievement-row + .zn-achievement-row { border-left:1px solid rgba(199,240,120,.17); padding-left:clamp(38px,6vw,88px); }
+.zn-achievement-kicker { display:block; margin-bottom:22px; color:var(--zn-lime); font:700 11px/1.5 Arial,sans-serif; letter-spacing:.18em; }
+.zn-achievement-copy { flex:1; }
+.zn-achievement-copy h2 { margin:0 0 18px; color:#f3f8ec; font-size:clamp(35px,3.5vw,52px); line-height:1.2; letter-spacing:-.045em; font-weight:700; }
+.zn-achievement-copy h2 em { color:var(--zn-lime); font-style:normal; }
+.zn-achievement-copy p { margin:0; color:#b8c8b7; font-size:14px; line-height:1.8; letter-spacing:.035em; }
+.zn-achievement-visual { min-height:0; display:inline-flex; align-items:center; justify-content:flex-start; position:relative; background:transparent; }
+.zn-achievement-visual img { display:block; max-width:100%; height:auto; }
+.zn-achievement-visual-store { gap:18px; color:#dcebd5; text-decoration:none; }
+.zn-achievement-visual-store img { width:185px; }
+.zn-store-visit { display:inline-flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid rgba(199,240,120,.5); font-size:13px; font-weight:600; line-height:1.2; white-space:nowrap; transition:color .25s ease,border-color .25s ease; }
+.zn-store-visit-arrow { width:28px; height:28px; display:grid; place-items:center; border:1px solid rgba(199,240,120,.5); border-radius:50%; color:var(--zn-lime); font-size:16px; font-weight:400; transition:color .25s ease,background .25s ease,transform .25s ease; }
+.zn-achievement-visual-store:hover .zn-store-visit,.zn-achievement-visual-store:focus-visible .zn-store-visit { color:var(--zn-lime); border-color:var(--zn-lime); }
+.zn-achievement-visual-store:hover .zn-store-visit-arrow,.zn-achievement-visual-store:focus-visible .zn-store-visit-arrow { color:#102018; background:var(--zn-lime); transform:translate(2px,-2px); }
+.zn-achievement-visual-store:focus-visible { outline:2px solid var(--zn-lime); outline-offset:8px; }
+.zn-achievement-visual-award svg { display:block; width:94px; height:94px; overflow:visible; }
 .zn-section { max-width:1480px; margin:0 auto; padding:clamp(90px,12vw,170px) clamp(24px,6vw,96px); }
 .zn-section-head { display:grid; grid-template-columns:minmax(130px,1fr) minmax(0,3fr); gap:30px; align-items:start; margin-bottom:55px; }
 .zn-section-head>span,.zn-finale>span { color:var(--zn-lime); font-size:11px; font-weight:700; letter-spacing:.18em; padding-top:12px; }
@@ -163,4 +181,18 @@ html { scroll-behavior:smooth; }
   .zn-hero-bottom { flex-wrap:wrap; row-gap:8px; }
   .zn-eyebrow { font-size:11px; letter-spacing:.12em; }
 }
-@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .zn-problem,.zn-text-link,.zn-panel-image img { transition:none; } }
+@media (max-width:800px) {
+  .zn-achievements { grid-template-columns:1fr; gap:0; }
+  .zn-achievement-row + .zn-achievement-row { border-left:0; border-top:1px solid rgba(199,240,120,.17); padding-left:0; }
+}
+@media (max-width:520px) {
+  .zn-achievements { padding:0 20px; }
+  .zn-achievement-row { padding:56px 0; }
+  .zn-achievement-copy h2 { font-size:clamp(36px,9vw,50px); }
+  .zn-achievement-visual-store { gap:12px; }
+  .zn-achievement-visual-store img { width:145px; }
+  .zn-store-visit { gap:7px; font-size:12px; }
+  .zn-store-visit-arrow { width:24px; height:24px; font-size:14px; }
+  .zn-achievement-visual-award svg { width:86px; height:86px; }
+}
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .zn-problem,.zn-text-link,.zn-panel-image img,.zn-store-visit,.zn-store-visit-arrow { transition:none; } }

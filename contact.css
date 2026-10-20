@@ -30,3 +30,13 @@
 @media(max-width:850px){.main-section .reach-section{grid-template-columns:1fr;gap:55px;min-height:0;padding-top:120px}.reach-record-area{margin-top:38px}.reach-directory{max-width:750px;width:100%}.reach-bottom{margin-top:20px}}
 @media(max-width:560px){.main-section .reach-section{padding:110px 20px 45px;gap:42px}.reach-section::after{left:20px;right:20px}.main-section .reach-section h2{font-size:clamp(47px,11vw,65px)}.reach-record-area{width:210px;margin-top:32px}.reach-record-label small{font-size:7px}.reach-record-label strong{font-size:16px}.reach-main-link{min-height:180px}.reach-mail-copy strong{font-size:clamp(25px,7vw,37px)}.reach-line{grid-template-columns:28px minmax(0,1fr);gap:10px}.reach-actions,.reach-wechat-toggle{grid-column:2;justify-self:start;margin-top:6px}.reach-wechat-toggle{grid-column:2}.reach-qr-panel{grid-template-columns:1fr;padding:4px 0 27px 38px;gap:15px}.reach-bottom{flex-wrap:wrap;line-height:1.6}}
 @media(prefers-reduced-motion:reduce){.reach-section *{animation-duration:.01ms!important;transition-duration:.01ms!important}.reach-record.is-spinning{animation:none}.reach-toast{transition:none}}
+
+/* A compact closing section for a single contact method. */
+.main-section .reach-section{min-height:0;padding-top:clamp(74px,8vw,110px);padding-bottom:38px;gap:clamp(30px,5vw,72px)}
+.main-section .reach-section h2{margin:20px 0 0}
+.reach-record-area{width:clamp(185px,18vw,230px);margin-top:24px;padding-bottom:0}
+.reach-record-hint{margin-top:15px}
+.reach-directory--single .reach-main-link{min-height:230px}
+.reach-bottom{margin-top:30px}
+@media(max-width:850px){.main-section .reach-section{gap:30px;padding-top:80px}.reach-record-area{margin-top:20px}.reach-bottom{margin-top:8px}}
+@media(max-width:560px){.main-section .reach-section{padding:76px 20px 32px;gap:27px}.reach-record-area{width:180px;margin-top:18px}.reach-directory--single .reach-main-link{min-height:155px;padding-top:23px;padding-bottom:23px}.reach-bottom{margin-top:8px}}

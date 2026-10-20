@@ -37,7 +37,7 @@
   document.querySelectorAll('[data-image]').forEach(button => {
     button.addEventListener('click', () => {
       fullImage.src = button.dataset.image;
-      fullImage.alt = button.querySelector('img')?.alt || button.dataset.caption || '项目材料';
+      fullImage.alt = button.querySelector('img')?.alt || button.dataset.caption || '项目画面';
       caption.textContent = button.dataset.caption || '';
       dialog.showModal();
     });

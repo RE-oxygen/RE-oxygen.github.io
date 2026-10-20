@@ -5,7 +5,8 @@ const projects = [
     subtitle: '偏头痛干预设备',
     description: '从贴合、触觉调节到 App 反馈，重构偏头痛干预体验',
     category: 'PRODUCT / HEALTHCARE',
-    cover: 'images/portfolio/portfolio1-bg.jpg',
+    cover: 'images/portfolio/portfolio1-detail1.png',
+    coverRatio: 1544 / 870,
     coverPosition: '50% 50%',
     href: 'portfolio-1.html',
     accent: '#b993b5'
@@ -16,6 +17,7 @@ const projects = [
     description: '从田间研究到任务提醒，让农事信息真正抵达农户',
     category: 'SERVICE / AGRICULTURE',
     cover: 'images/portfolio/zhinong-03.jpg',
+    coverRatio: 1600 / 900,
     coverPosition: '57% 50%',
     href: 'portfolio-5.html',
     accent: '#a9db69'
@@ -26,16 +28,18 @@ const projects = [
     description: '让真实物体开口，连接课堂训练与日常理解',
     category: 'INCLUSIVE / EDUCATION',
     cover: 'images/portfolio/portfolio2-bg.jpg',
+    coverRatio: 5532 / 3108,
     coverPosition: '54% 50%',
     href: 'portfolio-2.html',
     accent: '#82c9a3'
   },
   {
     title: '智能驾驶',
-    subtitle: '车辆体验与 App 优化',
-    description: '连接车内体验与移动端服务的设计探索',
+    subtitle: '极越 07 · 车辆与座舱体验',
+    description: '从上车到离车，降低新旧驾驶习惯的切换成本',
     category: 'UX / MOBILITY',
-    cover: 'images/portfolio/portfolio3-bg.webp',
+    cover: 'images/portfolio/portfolio3-bg.png',
+    coverRatio: 4946 / 2898,
     coverPosition: '55% 50%',
     href: 'portfolio-3.html',
     accent: '#55b5b0'
@@ -45,7 +49,8 @@ const projects = [
     subtitle: '视障人群家务辅助 App',
     description: '从无障碍视角出发，重新设计日常家务体验',
     category: 'ACCESSIBILITY / APP',
-    cover: 'images/portfolio/portfolio4-bg.webp',
+    cover: 'images/portfolio/portfolio4-bg.png',
+    coverRatio: 2480 / 1652,
     coverPosition: '50% 50%',
     href: 'portfolio-4.html',
     accent: '#78aef4'
@@ -67,14 +72,14 @@ if (albumViewport && albumTrack && projects.length) {
     card.setAttribute('aria-label', `${project.title}：${project.subtitle}，查看项目`);
     card.style.setProperty('--album-accent', project.accent);
     card.style.setProperty('--cover-position', project.coverPosition);
+    card.style.setProperty('--cover-ratio', project.coverRatio);
     card.innerHTML = `
       <span class="album-object" aria-hidden="true">
         <span class="album-disc"></span>
         <span class="album-spine"></span>
         <span class="album-cover">
-          <img src="${project.cover}" alt="" loading="lazy">
-          <span class="album-sticker">OXYGEN / EDITION ${number(index)}</span>
-          <span class="album-cover-number">${number(index)} / ${total}</span>
+          <span class="album-artwork"><img src="${project.cover}" alt="" loading="lazy"></span>
+          <span class="album-cover-label"><span>OXYGEN / EDITION ${number(index)}</span><span>${number(index)} / ${total}</span></span>
         </span>
       </span>
       <span class="album-card-info"><span><strong>${project.title}</strong><small>${project.category}</small></span><span aria-hidden="true">↗</span></span>`;

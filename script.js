@@ -38,15 +38,64 @@ if (menuToggle && header) {
 navLinks.forEach(link => link.addEventListener('click', closeMenu));
 document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
 
-// 照片翻转：点击和键盘均可操作，状态同步给辅助技术。
-const photoCard = document.querySelector('.photo-card');
-if (photoCard) {
-    photoCard.addEventListener('click', () => {
-        const flipped = photoCard.classList.toggle('flipped');
-        photoCard.setAttribute('aria-pressed', String(flipped));
-        photoCard.setAttribute('aria-label', flipped ? '返回个人照片' : '查看另一张照片');
-        const hint = document.querySelector('.portrait-toggle-hint');
-        if (hint) hint.firstChild.textContent = flipped ? '点击返回照片 ' : '点击翻转照片 ';
+// The portrait responds to the pointer and cycles through three costumes.
+const avatarStage = document.querySelector('.avatar-stage');
+if (avatarStage) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const figures = [...avatarStage.querySelectorAll('.avatar-stage-figure')];
+    const lookCount = document.querySelector('.avatar-look-count');
+    const lookCaption = document.querySelector('.about-portrait-bottom .portrait-caption');
+    const greeting = avatarStage.querySelector('.avatar-stage-greeting');
+    const looks = [
+        { key: 'original', name: '原始形象', label: 'ORIGINAL', image: 'images/avatar/avatar-3d.png' },
+        { key: 'fantasy', name: '魂环装扮', label: 'SOUL RINGS', image: 'images/avatar/avatar-fantasy.png' },
+        { key: 'orbit', name: '宇航装扮', label: 'ORBIT', image: 'images/avatar/avatar-orbit.png' },
+        { key: 'prism', name: '棱镜装扮', label: 'PRISM', image: 'images/avatar/avatar-prism.png' },
+    ];
+    looks.slice(1).forEach(look => { const image = new Image(); image.src = look.image; });
+    let lookIndex = 0;
+    let visibleFigure = 0;
+    let changing = false;
+    let greetingTimer;
+    avatarStage.addEventListener('pointermove', event => {
+        if (event.pointerType !== 'mouse' || reduceMotion.matches) return;
+        const rect = avatarStage.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - .5;
+        const y = (event.clientY - rect.top) / rect.height - .5;
+        avatarStage.style.setProperty('--tilt-x', `${(-y * 7).toFixed(2)}deg`);
+        avatarStage.style.setProperty('--tilt-y', `${(x * 7).toFixed(2)}deg`);
+        avatarStage.style.setProperty('--avatar-x', `${(x * 11).toFixed(1)}px`);
+        avatarStage.style.setProperty('--avatar-y', `${(y * 8).toFixed(1)}px`);
+    });
+    avatarStage.addEventListener('pointerleave', () => {
+        for (const property of ['--tilt-x', '--tilt-y', '--avatar-x', '--avatar-y']) {
+            avatarStage.style.removeProperty(property);
+        }
+    });
+    avatarStage.addEventListener('click', async () => {
+        if (changing) return;
+        changing = true;
+        const nextIndex = (lookIndex + 1) % looks.length;
+        const nextLook = looks[nextIndex];
+        const incomingFigure = figures[1 - visibleFigure];
+        incomingFigure.src = nextLook.image;
+        try { await incomingFigure.decode(); } catch { /* Keep the current look if the image fails. */ }
+        if (!incomingFigure.naturalWidth) { changing = false; return; }
+        avatarStage.dataset.look = nextLook.key;
+        lookCount.textContent = `LOOK ${String(nextIndex).padStart(2, '0')} / 03`;
+        lookCaption.textContent = `${nextLook.label} / ${String(nextIndex).padStart(2, '0')}`;
+        avatarStage.setAttribute('aria-label', `当前为${nextLook.name}，点击切换装扮`);
+        greeting.textContent = nextLook.label;
+        avatarStage.classList.remove('is-hello');
+        void avatarStage.offsetWidth;
+        avatarStage.classList.add('is-hello');
+        incomingFigure.classList.add('is-visible');
+        figures[visibleFigure].classList.remove('is-visible');
+        visibleFigure = 1 - visibleFigure;
+        lookIndex = nextIndex;
+        clearTimeout(greetingTimer);
+        greetingTimer = setTimeout(() => avatarStage.classList.remove('is-hello'), 1350);
+        setTimeout(() => { changing = false; }, reduceMotion.matches ? 100 : 650);
     });
 }
 
