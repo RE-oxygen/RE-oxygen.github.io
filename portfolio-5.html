@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07150d">
+    <meta name="description" content="智农：面向农户的智慧农事服务设计。了解项目痛点、线上线下解决方案、三项核心功能与田间实践。">
+    <title>智农｜OXYGEN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="zhinong.css">
+    <link rel="stylesheet" href="project-video.css">
+    <link rel="stylesheet" href="site-refine.css">
+</head>
+<body class="zn-body">
+    <canvas id="circleCanvas" aria-hidden="true"></canvas>
+    <header class="header zn-header">
+        <nav aria-label="主导航">
+            <a href="index.html" class="logo brand-wordmark" aria-label="OXYGEN，返回首页"><span class="brand-name">O<span class="brand-code">XYG</span>EN<span class="brand-period">.</span></span></a>
+            <ul>
+                <li><a href="index.html#about">关于我</a></li>
+                <li><a href="index.html#portfolio">创作</a></li>
+                <li><a href="index.html#contact">联系方式</a></li>
+            </ul>
+            <a class="header-back" href="index.html#portfolio">返回创作 ↗</a>
+        </nav>
+        <span class="zn-progress" aria-hidden="true"></span>
+    </header>
+
+    <main class="zn-page" id="top">
+        <section class="zn-hero" aria-labelledby="zn-title">
+            <div class="zn-hero-meta"><span>02 / SELECTED WORKS</span><span>AGRICULTURE · SERVICE DESIGN</span></div>
+            <div class="zn-hero-copy">
+                <p class="zn-eyebrow">从田间出发，重新连接每一件农事</p>
+                <h1 id="zn-title">智<span>农</span><sup>®</sup></h1>
+                <p class="zn-hero-line">帮农民<br><em>把事情做简单。</em></p>
+                <p class="zn-hero-desc">一个将农事管理、田间提醒与病虫害识别连接起来的智慧农事服务。让工具走进土地，也让信息真正抵达农户。</p>
+                <a class="zn-text-link" href="#challenge">探索项目 <span aria-hidden="true">↘</span></a>
+            </div>
+            <div class="zn-hero-bottom"><span>2025.06 — 2025.11 · 产品逻辑 / UI / 交互</span><span>01 — 08</span></div>
+        </section>
+
+        <figure class="zn-full-image zn-cover-image">
+            <img src="images/portfolio/zhinong-03.jpg" alt="田野背景上，农户拿着平板使用智农服务" fetchpriority="high">
+            <figcaption>在果园里，让农事信息跟上脚步</figcaption>
+        </figure>
+
+        <section class="zn-achievements" aria-label="上架与获奖">
+            <div class="zn-achievement-row">
+                <div class="zn-achievement-copy">
+                    <span class="zn-achievement-kicker">RELEASE / 2025</span>
+                    <h2>已上架<br><em>App Store。</em></h2>
+                    <p>智农 FarmSync · iPad 应用</p>
+                </div>
+                <a class="zn-achievement-visual zn-achievement-visual-store" href="https://apps.apple.com/us/app/%E6%99%BA%E5%86%9C-farmsync/id6736766556" target="_blank" rel="noopener noreferrer" aria-label="在 App Store 查看智农 FarmSync，打开新窗口">
+                    <img src="images/portfolio/zhinong-app-store-badge.png" alt="Download on the App Store" loading="lazy">
+                    <span class="zn-store-visit"><span>前往 App Store</span><span class="zn-store-visit-arrow" aria-hidden="true">↗</span></span>
+                </a>
+            </div>
+            <div class="zn-achievement-row">
+                <div class="zn-achievement-copy">
+                    <span class="zn-achievement-kicker">RECOGNITION / 2025</span>
+                    <h2>国赛二等奖，<br><em>社会责任创新奖。</em></h2>
+                    <p>第十届中国高校计算机大赛 · 移动应用创新赛</p>
+                </div>
+                <div class="zn-achievement-visual zn-achievement-visual-award">
+                    <svg viewBox="0 0 512 512" role="img" aria-label="移动应用创新赛 MAIC 标识" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <clipPath id="zn-maic-inner"><rect x="72" y="72" width="368" height="368"/></clipPath>
+                            <filter id="zn-maic-cutout" color-interpolation-filters="sRGB">
+                                <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -0.2126 -0.7152 -0.0722 0 1"/>
+                                <feComponentTransfer><feFuncA type="discrete" tableValues="0 0 0 0 1"/></feComponentTransfer>
+                            </filter>
+                        </defs>
+                        <image href="images/awards/maic-app.png" width="512" height="512" clip-path="url(#zn-maic-inner)" filter="url(#zn-maic-cutout)"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section class="zn-section zn-challenge" id="challenge" aria-labelledby="challenge-title">
+            <div class="zn-section-head"><span>01 / THE CHALLENGE</span><h2 id="challenge-title">农事难题，<br>发生在<span>每一天。</span></h2></div>
+            <div class="zn-challenge-grid">
+                <article class="zn-problem"><span class="zn-problem-no">01</span><h3>风险“难”预料</h3><p>种植仍高度依赖个人经验。病虫害响应滞后，减产风险难以及时防范。</p><span class="zn-problem-mark" aria-hidden="true">↗</span></article>
+                <article class="zn-problem"><span class="zn-problem-no">02</span><h3>工具“缺”失</h3><p>已有工具往往复杂、功能单一，难以贴合真实田间工作与农户的使用习惯。</p><span class="zn-problem-mark" aria-hidden="true">↗</span></article>
+                <article class="zn-problem"><span class="zn-problem-no">03</span><h3>信息“断”层</h3><p>生产者与市场信息之间存在距离，好货难卖、优产难优价。</p><span class="zn-problem-mark" aria-hidden="true">↗</span></article>
+            </div>
+            <button class="zn-source-link" type="button" data-image="images/portfolio/zhinong-02.jpg" data-caption="从田间问题出发，梳理设计机会">查看问题地图 ↗</button>
+        </section>
+
+        <section class="zn-section zn-process" id="process" aria-labelledby="process-title">
+            <div class="zn-section-head"><span>02 / FROM FIELD TO FLOW</span><h2 id="process-title">先理解田间，<br>再设计<span>屏幕。</span></h2></div>
+            <p class="zn-section-intro">农业信息复杂且高度依赖情境。设计从农户的日常工作出发，与农学背景伙伴一起拆解生产流程，再把专业判断转成容易理解、能够执行的界面任务。</p>
+            <div class="zn-process-steps">
+                <article><span>01 / OBSERVE</span><h3>走进果园</h3><p>观察农户如何巡田、记录问题与安排农事，把真实工作流作为界面结构的起点。</p></article>
+                <article><span>02 / TRANSLATE</span><h3>翻译专业知识</h3><p>与农学伙伴协作，整理病虫害、天气与作业信息，明确农户真正需要的判断和下一步行动。</p></article>
+                <article><span>03 / ITERATE</span><h3>带回田间检验</h3><p>根据使用反馈调整产品逻辑、页面层级与交互，让复杂数据逐步变成可执行的任务。</p></article>
+            </div>
+            <div class="zn-process-note"><span>DESIGN PRINCIPLE</span><p>从“用户寻找数据”，走向<span>“任务主动抵达用户”。</span></p></div>
+        </section>
+
+        <section class="zn-section zn-solution" id="solution" aria-labelledby="solution-title">
+            <div class="zn-section-head"><span>03 / THE SYSTEM</span><h2 id="solution-title">在线上规划，<br>在<span>田间执行。</span></h2></div>
+            <p class="zn-section-intro">项目提出线上线下融合的农事服务：线上覆盖从“种”到“收”再到“卖”的流程，线下把平板变成深入田间的工作终端。</p>
+            <div class="zn-system-grid">
+                <article class="zn-system-card"><div class="zn-system-title"><span>ONLINE / 线上</span><span aria-hidden="true">↗</span></div><h3>一位“全能农事管家”</h3><p>集合数据监测、天气预警、病害识别、农事日历与供销管理，让分散的信息进入同一个工作流程。</p><div class="zn-system-tags"><span>监测</span><span>预警</span><span>日历</span><span>供销</span></div></article>
+                <article class="zn-system-card"><div class="zn-system-title"><span>OFFLINE / 线下</span><span aria-hidden="true">↗</span></div><h3>一个“超级农事工具”</h3><p>以 iPad 为田间终端，将任务提醒和拍照识别带进真实场景；项目方案强调在网络条件受限时也能使用。</p><div class="zn-system-tags"><span>田间终端</span><span>任务提醒</span><span>离线识别</span></div></article>
+            </div>
+            <figure class="zn-inline-visual"><img src="images/portfolio/zhinong-04.jpg" alt="智农线上农事管理与线下田间工具的方案展示" loading="lazy"><figcaption>从线上管理到田间执行的完整服务</figcaption></figure>
+        </section>
+
+        <section class="zn-section zn-features" id="features" aria-labelledby="features-title">
+            <div class="zn-section-head"><span>04 / THREE IDEAS</span><h2 id="features-title">技术进入田间，<br><span>交互跟着人走。</span></h2></div>
+            <div class="zn-feature-shell">
+                <div class="zn-feature-tabs" role="tablist" aria-label="智农核心设计">
+                    <button class="zn-feature-tab is-active" role="tab" id="zn-tab-1" aria-controls="zn-panel-1" aria-selected="true" tabindex="0" type="button"><span>01 / 对话</span><strong>会说话的农事助理</strong><small>动口，少动手</small></button>
+                    <button class="zn-feature-tab" role="tab" id="zn-tab-2" aria-controls="zn-panel-2" aria-selected="false" tabindex="-1" type="button"><span>02 / 到达</span><strong>场景化田间提醒</strong><small>让任务找到人</small></button>
+                    <button class="zn-feature-tab" role="tab" id="zn-tab-3" aria-controls="zn-panel-3" aria-selected="false" tabindex="-1" type="button"><span>03 / 识别</span><strong>随时在线的植保专家</strong><small>拍下就能判断</small></button>
+                </div>
+                <div class="zn-feature-panels">
+                    <article class="zn-feature-panel is-active" role="tabpanel" id="zn-panel-1" aria-labelledby="zn-tab-1"><div class="zn-feature-copy"><span>VOICE FIRST</span><h3>用说话完成复杂操作</h3><p>面向不熟悉复杂 App 操作的农户，方案将农业知识库、语音交互和 AI 助理结合，让农事问答更直接。</p></div><button type="button" class="zn-panel-image" data-image="images/portfolio/zhinong-05.jpg" data-caption="会说话的农事助理"><img src="images/portfolio/zhinong-05.jpg" alt="AI 语音农事助理的方案与界面展示" loading="lazy"><span>点击查看大图 ↗</span></button></article>
+                    <article class="zn-feature-panel" role="tabpanel" id="zn-panel-2" aria-labelledby="zn-tab-2" hidden><div class="zn-feature-copy"><span>LOCATION AWARE</span><h3>走到田间，任务随之出现</h3><p>项目提出在关键农事区域使用低功耗蓝牙信标。农户带着设备走进田地，即可收到施肥、灌溉或采收等对应提醒。</p></div><button type="button" class="zn-panel-image" data-image="images/portfolio/zhinong-06.jpg" data-caption="走到哪里，提醒就到哪里"><img src="images/portfolio/zhinong-06.jpg" alt="基于低功耗蓝牙信标的田间任务提醒方案" loading="lazy"><span>点击查看大图 ↗</span></button></article>
+                    <article class="zn-feature-panel" role="tabpanel" id="zn-panel-3" aria-labelledby="zn-tab-3" hidden><div class="zn-feature-copy"><span>OFFLINE READY</span><h3>网络不好，也能及时识别</h3><p>将识别模型部署到设备端，田间断网时仍可拍照获取病虫害识别结果，减少等待上传造成的延误。</p></div><button type="button" class="zn-panel-image" data-image="images/portfolio/zhinong-07.jpg" data-caption="断网时也能及时识别"><img src="images/portfolio/zhinong-07.jpg" alt="无网络病虫害识别与田间即时诊断方案" loading="lazy"><span>点击查看大图 ↗</span></button></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="zn-section zn-field" id="field" aria-labelledby="field-title">
+            <div class="zn-section-head"><span>05 / IN THE FIELD</span><h2 id="field-title">从展示屏幕，<br>走向<span>真实田间。</span></h2></div>
+            <div class="zn-field-layout"><div class="zn-field-copy"><p>从产品界面回到果园，团队持续观察农户如何拿起平板、查看提醒，并把信息用于当天的农事判断。</p><div class="zn-stats"><div><strong>6<small>个月</small></strong><span>试点周期</span></div><div><strong>102<small>名</small></strong><span>参与农户</span></div><div><strong>800<small>亩</small></strong><span>覆盖果园</span></div></div><p class="zn-stat-note">团队试点阶段记录</p></div><button type="button" class="zn-field-image" data-image="images/portfolio/zhinong-08.jpg" data-caption="让设计走进果园"><img src="images/portfolio/zhinong-08.jpg" alt="果园中的平板使用照片与项目实践数据" loading="lazy"><span>查看田间记录 ↗</span></button></div>
+        </section>
+
+    <section class="project-film" id="project-film" aria-labelledby="zn-film-title">
+      <div class="project-film-heading"><span class="project-film-index">06 / PROJECT FILM</span><div><p class="project-film-kicker">SMART FARMING · THE PROJECT FILM</p><h2 id="zn-film-title">让田间故事，<br>在画面中<span>继续生长。</span></h2></div></div>
+      <p class="project-film-intro">从农事需求到数字工具，观看智农项目影片，了解方案如何连接信息与田间行动。</p>
+      <div class="project-film-frame" data-film="智农">
+        <button class="project-film-launch" type="button" aria-label="播放智农项目影片"><img src="images/portfolio/zhinong-03.jpg" alt="农户在田野中使用智农平板的场景" loading="lazy"><span class="project-film-shade" aria-hidden="true"></span><span class="project-film-play" aria-hidden="true"><span>▶</span></span><span class="project-film-preview" aria-hidden="true">PLAY THE FILM <b>↗</b></span></button>
+        <video class="project-film-video" controls playsinline preload="none" aria-label="智农项目影片" hidden><source data-src="video/智农.mp4" type="video/mp4">您的浏览器不支持视频播放。</video>
+      </div>
+      <div class="project-film-caption"><span>02 / 智农 · 项目影片</span><span>点击播放 · 可全屏观看</span></div>
+    </section>
+
+        <section class="zn-section zn-reflection" id="reflection" aria-labelledby="reflection-title">
+            <div class="zn-section-head"><span>07 / REFLECTION</span><h2 id="reflection-title">让设计持续接受<span>田间反馈。</span></h2></div>
+            <div class="zn-reflection-grid">
+                <article><span>我的角色</span><h3>产品逻辑与交互设计</h3><p>负责界面结构、产品逻辑与交互流程，结合田间研究和开发协作，让功能更贴近农户的操作习惯。</p></article>
+                <article><span>关键方法</span><h3>跨专业共同转译</h3><p>将农业伙伴提供的知识与农户的实际需求逐一对照，把专业内容转化为清晰的任务与提示。</p></article>
+                <article><span>下一步设想</span><h3>连接更多田间设备</h3><p>未来可继续探索传感器和控制设备的联动，让信息提示与实体农事操作形成更完整的闭环。</p></article>
+            </div>
+            <p class="zn-reflection-note">“下一步设想”为后续方向，不代表已实现的产品功能。</p>
+        </section>
+
+        <section class="zn-finale" aria-labelledby="finale-title"><span>08 / THE INTENTION</span><h2 id="finale-title">从“看天吃饭”<br>到<span>“知天而作”。</span></h2><p>让农事工具更易用，让判断更及时，让土地与人之间的信息流动起来。</p><div class="zn-final-links"><a href="index.html#portfolio">返回项目唱片架 ↗</a><a href="portfolio-2.html">继续看：知鹿 →</a></div></section>
+    </main>
+
+    <dialog class="zn-dialog" aria-label="项目画面大图"><form method="dialog"><button type="submit" aria-label="关闭大图">×</button></form><img alt=""><p></p></dialog>
+    <script src="orb.js"></script>
+    <script src="zhinong.js"></script>
+    <script src="project-video.js"></script>
+</body>
+</html>
